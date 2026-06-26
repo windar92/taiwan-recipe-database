@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://taiwan-recipe-database.vercel.app/sitemap.xml

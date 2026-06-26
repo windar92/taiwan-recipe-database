@@ -4,6 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>台灣料理影片資料庫</title>
+<meta name="description" content="台灣料理影片資料庫：1100+ 道台灣菜的 YouTube 食譜教學影片總整理，涵蓋熱炒、小吃、家常、宴席、客家、原住民與各地地方名菜，可搜尋、可點播。">
+<link rel="canonical" href="https://taiwan-recipe-database.vercel.app/">
+<meta name="robots" content="index,follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="台灣料理影片資料庫">
+<meta property="og:description" content="1100+ 道台灣菜的 YouTube 食譜影片總整理，可搜尋、可點播。">
+<meta property="og:url" content="https://taiwan-recipe-database.vercel.app/">
 <style>
   :root{--bg:#faf7f2;--card:#fff;--ink:#2b2b2b;--sub:#7a736a;--accent:#c0392b;--accent2:#e67e22;--line:#ece6dd;--chip:#f3ede4;}
   *{box-sizing:border-box}
@@ -128,6 +135,12 @@ document.querySelectorAll('.fbtn').forEach(b=>b.addEventListener('click',()=>{
   document.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));b.classList.add('active');curFilter=b.dataset.f;apply();
 }));
 apply();
+function track(n,d){try{window.va&&window.va('event',Object.assign({name:n},d||{}));}catch(e){}}
+(function(){var sb=document.getElementById('submitBtn');if(sb)sb.addEventListener('click',function(){track('submit_click');});
+var ap=document.getElementById('app');if(ap)ap.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('.vids a');if(a){var d=a.closest('[data-name]');track('video_click',{dish:d?d.dataset.name:''});return;}var s=e.target.closest&&e.target.closest('summary.dish');if(s){var dd=s.closest('[data-name]');track('dish_open',{dish:dd?dd.dataset.name:''});}});
+var st,se=document.getElementById('search');if(se)se.addEventListener('input',function(){clearTimeout(st);var q=this.value.trim();st=setTimeout(function(){if(q.length>=2)track('search',{q:q});},1200);});})();
 </script>
+<script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
